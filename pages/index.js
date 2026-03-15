@@ -1,18 +1,18 @@
-import { useState } from 'react';
-import Head from 'next/head';
+import { useState } from "react";
+import Head from "next/head";
 
-import Fuse from 'fuse.js';
-import _ from 'lodash';
+import Fuse from "fuse.js";
+import _ from "lodash";
 
-import { countries } from '../countries';
-import styles from '../styles/Home.module.css';
-import CodeSampleModal from '../components/CodeSampleModal';
+import { countries } from "../countries";
+import styles from "../styles/Home.module.css";
+import CodeSampleModal from "../components/CodeSampleModal";
 
 export default function Start({ countries }) {
   const [results, setResults] = useState(countries);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const fuse = new Fuse(countries, {
-    keys: ['name'],
+    keys: ["name"],
     threshold: 0.3,
   });
 
@@ -66,7 +66,7 @@ export default function Start({ countries }) {
             {results.map((country) => (
               <li key={country.cca2} className={styles.country}>
                 <p>
-                  {country.name} - {country.population.toLocaleString()}
+                  {country.name} - {country.population.toLocaleString("en-US")}
                 </p>
               </li>
             ))}
