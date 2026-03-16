@@ -1,12 +1,9 @@
 import { useState } from "react";
 import Head from "next/head";
 
-import Fuse from "fuse.js";
-import { now } from "lodash-es";
-
 import { countries } from "../countries";
 import styles from "../styles/Home.module.css";
-import CodeSampleModal from "../components/CodeSampleModal";
+
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
@@ -17,10 +14,6 @@ const CodeSampleModal = dynamic(() => import("../components/CodeSampleModal"), {
 export default function Start({ countries }) {
   const [results, setResults] = useState(countries);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const fuse = new Fuse(countries, {
-    keys: ["name"],
-    threshold: 0.3,
-  });
 
   return (
     <div>
@@ -41,10 +34,11 @@ export default function Start({ countries }) {
 
         <div className={styles.heroImage}>
           <Image
-            src="large-image.jpg"
+            src="/large-image.jpg" 
             alt="Large Image"
             width={3048}
             height={2024}
+            priority
           />
         </div>
 
