@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 
 import Fuse from "fuse.js";
-import _ from "lodash";
+import { now } from "lodash-es";
 
 import { countries } from "../countries";
 import styles from "../styles/Home.module.css";
@@ -51,6 +51,14 @@ export default function Start({ countries }) {
             className={styles.input}
             onChange={async (e) => {
               const { value } = e.currentTarget;
+              // Dynamically load libraries
+              const Fuse = (await import("fuse.js")).default;
+              const { now } = await import("lodash-es");
+
+              const fuse = new Fuse(countries, {
+                keys: ["name"],
+                threshold: 0.3,
+              });
 
               const searchResult = fuse
                 .search(value)
@@ -63,7 +71,7 @@ export default function Start({ countries }) {
 
               // Fake analytics hit
               console.info({
-                searchedAt: _.now(),
+                searchedAt: now(),
               });
             }}
           />
