@@ -1,7 +1,9 @@
 
-## This repository contains the starter template for the [Improving Web Vitals](https://nextjs.org/learn/seo/improve/lighthouse) example of the Next.js [learn SEO course](https://nextjs.org/learn/seo/introduction-to-seo).
+# Next.js SEO Starter & Optimization
 
-### This repository contains the optimized version of the Next.js SEO and Performance project, focusing on achieving elite-level Core Web Vitals scores and superior technical SEO.
+This repository started as a template for the [Improving Web Vitals](https://nextjs.org/learn/seo/improve/lighthouse) example from the Next.js [Learn SEO course](https://nextjs.org/learn/seo/introduction-to-seo).
+
+Through comprehensive technical auditing and refactoring, I have transformed it into an **optimized production-ready project**, focusing on achieving elite-level **Core Web Vitals** scores and superior technical SEO.
 ---
 ## 🚀 Next.js Performance & SEO Mastery
 This project showcases advanced optimization techniques in Next.js to ensure a fast, stable, and search-engine-friendly user experience.
@@ -47,6 +49,6 @@ Using the `next/script` component, I manage the loading priority of external scr
 
 ---
 ## 🚀 How to Run Locally
-1. Clone the repository: `git clone  https://aalexblade.github.io/nextjs-lighthouse/`
+1. Clone the repository: `git clone  nextjs-lighthouse-five.vercel.app/`
 2. Install dependencies: `npm install`
 3. Run the development server: `npm run dev`
